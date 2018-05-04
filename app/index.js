@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-export default class Home extends React.Component {
+// import { BrowserRouter } from 'react-router-dom';
+
+export class Home extends React.Component {
   render() {
     return (
-      <div>Hello React 1234567890abc</div>
+      <div>Hello React 1234567890abcdef</div>
     )
   }
 }
 ReactDom.render(<Home/>, document.getElementById('app'));
-console.log('1234561234123')
+console.log("1234561234123")
