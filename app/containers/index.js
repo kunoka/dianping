@@ -8,6 +8,17 @@ export default class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    console.log(this)
+    setTimeout(function(){
+      console.log(this)
+      this.setState({initDone:true})
+    },1000)
+    // setTimeout(() => {
+    //   console.log(this)
+    //   this.setState({initDone:true})
+    // }, 1000);
+  }
   render() {
     return(
       <div>
