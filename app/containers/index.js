@@ -10,9 +10,10 @@ export default class App extends React.Component {
 
   componentDidMount() {
     console.log(this)
+    let that = this;
     setTimeout(function(){
       console.log(this)
-      this.setState({initDone:true})
+      that.setState({initDone:true})
     },1000)
     // setTimeout(() => {
     //   console.log(this)
