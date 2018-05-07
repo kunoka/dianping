@@ -8,6 +8,19 @@ export default class App extends React.Component {
     }
   }
 
+  componentWillMount() {
+    var result = fetch('/api/post', {
+      credentials: 'include',
+      headers: {
+        'Accept': 'application/json, text/palin, */*'
+      }
+    });
+    result.then(res => {
+      return res.text()
+    }).then(text => {
+      console.log(text)
+    })
+  }
   componentDidMount() {
     console.log(this)
     let that = this;
