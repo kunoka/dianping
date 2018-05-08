@@ -1,3 +1,10 @@
-import userActions from '../actions/userinfo'
+import {combineReducers} from 'redux'
+import userinfo from './userinfo'
+import tmptest from './tmptest'
 
-switch ()
+// 可以把多个规则合并
+export default combineReducers({
+  userinfo,
+  tmptest
+})
+

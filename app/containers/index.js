@@ -1,6 +1,11 @@
-import React from 'react'
-// import {Link} from 'react-router-dom';
-export default class App extends React.Component {
+import React from 'react';
+import localStore from '../util/localStore';
+import {CITYNAME} from '../config/localStoreKey';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as UserInfoActionsFromOtherFile from '../actions/userinfo';
+
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,28 +21,47 @@ export default class App extends React.Component {
       }
     });
     result.then(res => {
-      return res.text()
+      return res.text();
     }).then(text => {
-      console.log(text)
+      console.log(text);
     })
   }
   componentDidMount() {
-    console.log(this)
-    let that = this;
-    setTimeout(function(){
-      console.log(this)
-      that.setState({initDone:true})
-    },1000)
-    // setTimeout(() => {
-    //   console.log(this)
-    //   this.setState({initDone:true})
-    // }, 1000);
+    // 从localstorage里面获取城市
+    let cityName = localStore.getItem(CITYNAME);
+    if (cityName == null) {
+      cityName = '深圳'
+    }
+    // 将城市信息存储到 Redux 中
+    this.props.userinfoActions.update({cityName: cityName})
+    this.props.userinfoActions.test({
+      time: new Date().toISOString()
+    })
+    this.setState({
+      initDone: true
+    })
   }
   render() {
     return(
       <div>
         {this.state.initDone ? this.props.children : <div>加载中...</div>}
+        <span>{this.props.userinfo.cityName}</span>
+        <span>{this.props.tmptest.time}</span>
       </div>
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    userinfo: state.userinfo,
+    tmptest: state.tmptest
+  }
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    userinfoActions: bindActionCreators(UserInfoActionsFromOtherFile,dispatch)
+  }
+
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App)
