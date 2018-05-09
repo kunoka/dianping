@@ -15,17 +15,17 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    var result = fetch('/api/post', {
-      credentials: 'include',
-      headers: {
-        'Accept': 'application/json, text/palin, */*'
-      }
-    });
-    result.then(res => {
-      return res.text();
-    }).then(text => {
-      console.log(text);
-    })
+    // var result = fetch('/api/post', {
+    //   credentials: 'include',
+    //   headers: {
+    //     'Accept': 'application/json, text/palin, */*'
+    //   }
+    // });
+    // result.then(res => {
+    //   return res.text();
+    // }).then(text => {
+    //   console.log(text);
+    // })
   }
   componentDidMount() {
     // 从localstorage里面获取城市
@@ -44,7 +44,7 @@ class App extends React.Component {
   }
   render() {
     return(
-      <HomeHeader></HomeHeader>
+      <HomeHeader cityName={this.props.userinfo.cityName}></HomeHeader>
     )
   }
 }

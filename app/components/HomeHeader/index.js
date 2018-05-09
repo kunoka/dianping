@@ -7,7 +7,7 @@ export default class HomeHeadr extends React.Component {
     return(
       <div id="home-header" className="clear-fix">
         <div className="home-header-left float-left">
-          <span>深圳</span>
+          <span>{this.props.cityName}</span>
           &nbsp;
           <i className="icon-angle-down"></i>
         </div>

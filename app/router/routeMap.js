@@ -14,8 +14,8 @@ export default class RouterMap extends React.Component {
       <Router>
         <App>
           <Route exact path="/" component={Home}></Route>
-          <Route exact path="/city" component={City}></Route>
-          <Route exact path="/User" component={User}></Route>
+          <Route path="/city" component={City}></Route>
+          <Route path="/User" component={User}></Route>
           <Route path="/Search/:type(/:keyword)" component={Search}></Route>
           <Route path="/detail/:id" component={Detail}></Route>
           <Route path="*" component={NotFound}></Route>
