@@ -23,6 +23,14 @@ module.exports = {
         options: { // 这里的配置项参数将会被传递到 eslint 的 CLIEngine
           formatter: require('eslint-friendly-formatter') // 指定错误报告的格式规范
         }
+      },
+      {
+        test: /\.(less|css)$/,
+        loader: 'style-loader!css-loader!less-loader'
+      },
+      {
+        test: /\.(png|woff|woff2|svg|ttf|eot)($|\?)/i,
+        loader: 'url-loader?limit=5000'
       }
     ]
   },
@@ -49,10 +57,10 @@ module.exports = {
     proxy: {
       // 凡是 'api' 开头的http请求，都会被代理到localhost:3000
       // koa 代码在./mock目录中，启动命令为npm run mock
-      '/api': {
-        target: 'http://localhost:3000',
-        secure: false
-      }
+      // '/api': {
+      //   target: 'http://localhost:3000',
+      //   secure: false
+      // }
     },
     contentBase: path.join(__dirname, './build'),
     port: 8080,

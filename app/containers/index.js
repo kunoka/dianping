@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as UserInfoActionsFromOtherFile from '../actions/userinfo';
 import HomeHeader from '../components/HomeHeader';
-
+import '../static/css/common.less';
 class App extends React.Component {
   constructor(props) {
     super(props);

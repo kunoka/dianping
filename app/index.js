@@ -3,7 +3,6 @@ import ReactDom from 'react-dom';
 import RouteMap from './router/routeMap'
 import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
-
 const store = configureStore()
 ReactDom.render((
   <Provider store={store}>

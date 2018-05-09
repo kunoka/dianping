@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'sell-icon';
+  src:  url('fonts/sell-icon.eot?sz5c42');
+  src:  url('fonts/sell-icon.eot?sz5c42#iefix') format('embedded-opentype'),
+    url('fonts/sell-icon.ttf?sz5c42') format('truetype'),
+    url('fonts/sell-icon.woff?sz5c42') format('woff'),
+    url('fonts/sell-icon.svg?sz5c42#sell-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sell-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pictures:before {
+  content: "\e900";
+}
+.icon-images:before {
+  content: "\e900";
+}
+.icon-photos:before {
+  content: "\e900";
+}
+.icon-chevron-left:before {
+  content: "\e901";
+}
+.icon-angle-down:before {
+  content: "\e902";
+}
+.icon-angle-right:before {
+  content: "\e903";
+}
+.icon-image:before {
+  content: "\e90d";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-location:before {
+  content: "\e947";
+}
+.icon-mobile2:before {
+  content: "\e959";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-search:before {
+  content: "\e986";
+}
+.icon-key:before {
+  content: "\e98d";
+}
+.icon-star-empty:before {
+  content: "\e9d7";
+}
+.icon-star-full:before {
+  content: "\e9d9";
+}
+.icon-share:before {
+  content: "\ea7d";
+}
