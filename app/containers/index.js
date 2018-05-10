@@ -4,7 +4,6 @@ import {CITYNAME} from '../config/localStoreKey';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as UserInfoActionsFromOtherFile from '../actions/userinfo';
-import HomeHeader from '../components/HomeHeader';
 import '../static/css/common.less';
 class App extends React.Component {
   constructor(props) {
@@ -44,7 +43,10 @@ class App extends React.Component {
   }
   render() {
     return(
-      <HomeHeader cityName={this.props.userinfo.cityName}></HomeHeader>
+      <div>
+        {this.state.initDone ? this.props.children : <div>加载中...</div>}
+      </div>
+      // <HomeHeader cityName={this.props.userinfo.cityName}></HomeHeader>
     )
   }
 }

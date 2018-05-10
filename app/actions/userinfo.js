@@ -7,6 +7,13 @@ export function update(data) {
   }
 }
 
+export function change(data) {
+  return {
+    type: actionTypes.USERINFO_UPDATE,
+    data
+  }
+}
+
 export function test(data) {
   return {
     type: 'test',
