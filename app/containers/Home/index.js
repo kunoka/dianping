@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as UserInfoActionsFromOtherFile from '../../actions/userinfo';
 import localStore from '../../util/localStore';
-
+import Category from '../../Components/Category';
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -30,6 +30,7 @@ class Home extends React.Component {
       <div>
         <div>
           <HomeHeader cityName={this.props.userinfo ? this.props.userinfo.cityName : ''}></HomeHeader>
+          <Category></Category>
         </div>
       </div>
     )

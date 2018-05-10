@@ -62,7 +62,7 @@ module.exports = {
       //   secure: false
       // }
     },
-    contentBase: path.join(__dirname, './build'),
+    contentBase: path.join(__dirname, './app'),
     port: 8080,
     open: true,
     historyApiFallback: true
