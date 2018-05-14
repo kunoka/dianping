@@ -27,7 +27,7 @@ export default class Category extends React.Component {
               <li className="float-left shenghoufuwu">生活服务</li>
               <li className="float-left jianshenyundong">健身运动</li>
               <li className="float-left meifa">美发</li>
-              <li className="float-left qinzi">亲子</li>
+              <li className="float-left qinzi">亲子22</li>
               <li className="float-left ciaochikuaican">小吃快餐</li>
               <li className="float-left zizhucan">自助餐</li>
               <li className="float-left jiuba">酒吧</li>
@@ -49,7 +49,7 @@ export default class Category extends React.Component {
           </div>
           <div className="carousel-item">
             <ul className="clear-fix">
-              <li className="float-left jingdian">日本菜</li>
+              <li className="float-left jingdian">123</li>
               <li className="float-left spa">SPA</li>
               <li className="float-left jiehun">结婚</li>
               <li className="float-left xuexipeixun">学习培训</li>
