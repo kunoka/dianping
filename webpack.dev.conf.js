@@ -57,10 +57,10 @@ module.exports = {
     proxy: {
       // 凡是 'api' 开头的http请求，都会被代理到localhost:3000
       // koa 代码在./mock目录中，启动命令为npm run mock
-      // '/api': {
-      //   target: 'http://localhost:3000',
-      //   secure: false
-      // }
+      '/api': {
+        target: 'http://localhost:3000',
+        secure: false
+      }
     },
     contentBase: path.join(__dirname, './app'),
     port: 8080,

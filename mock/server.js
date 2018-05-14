@@ -4,7 +4,7 @@ const koaBody = require('koa-body')();
 const app = new Koa();
 // 对于任何请求，app将调用该异步函数处理请求：
 app.use(async (ctx, next) => {
-  console.log(ctx.request.path+':'+ctx.request.method);
+  console.log(ctx.request.path + ':' + ctx.request.method);
   await next();
 });
 
@@ -22,6 +22,11 @@ router.get('/api/2', async (ctx, next) => {
     a: 1,
     b: '123'
   };
+});
+// 首页 -- 广告(超值特惠)
+var homeAdData  =require('./home/ad');
+router.get('/api/homead', async (ctx, next) => {
+  ctx.response.body = homeAdData;
 });
 router.get('/api/post', async (ctx, next) => {
   ctx.response.body = JSON.stringify(ctx);
