@@ -1,5 +1,6 @@
 import React from 'react';
 import { getAdData } from '../../fetch/home/home';
+import HomeAd from '../../../component/HomeAd';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>{
-        this.state.data.length
+        this.state.data.length ? <HomeAd data={this.state.data}></HomeAd> : 'loading'
       }
       </div>
     )
