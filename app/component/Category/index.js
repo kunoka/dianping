@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactSwipe from 'react-swipe';
 import './style.less';
-import {getAdData} from '../../../fetch/home/home';
+import {getAdData} from '../../containers/fetch/home/home';
 
 export default class Category extends React.Component {
   constructor(props) {

@@ -7,6 +7,7 @@ import * as UserInfoActionsFromOtherFile from '../../actions/userinfo';
 import localStore from '../../util/localStore';
 // import Category from '../../Components/Category';
 import Category from '../../component/Category';
+import Ad from './subpage/Ad';
 
 class Home extends React.Component {
   constructor(props) {
@@ -33,6 +34,8 @@ class Home extends React.Component {
         <div>
           <HomeHeader cityName={this.props.userinfo ? this.props.userinfo.cityName : ''}></HomeHeader>
           <Category></Category>
+          <div style={{height: '15px'}}></div>
+          <Ad></Ad>
         </div>
       </div>
     )
