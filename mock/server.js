@@ -28,10 +28,26 @@ var homeAdData  =require('./home/ad');
 router.get('/api/homead', async (ctx, next) => {
   ctx.response.body = homeAdData;
 });
+// 首页 --推荐列表（猜你喜欢）
+var homeListData = require('./home/list');
+router.get('/api/homelist/:city/:page', async(ctx, next) => {
+  // 参数ß
+  console.log('---------------')
+  console.log(ctx.req);
+  console.log(ctx.response);
+  const params = ctx.params;
+  console.log('==============');
+  console.log(params)
+  const paramsCity = params.city;
+  const paramsPage = params.page;
+  console.log('当前城市: ' + paramsCity);
+  console.log('当前页数: ' + paramsPage);
+  ctx.response.body = homeListData;
+})
 router.get('/api/post', async (ctx, next) => {
   ctx.response.body = JSON.stringify(ctx);
 });
 app.use(router.routes());
 // 在端口3000监听:
-app.listen(3000);
-console.log('app started at port 3000...');
+app.listen(3003);
+console.log('app started at port 3003...');

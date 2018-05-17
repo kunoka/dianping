@@ -8,6 +8,15 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle[hash].js'
   },
+  resolve: {
+    extensions: ['.js', 'json'],
+    alias: {
+      '@' : path.resolve(__dirname, 'app'),
+      'containers': path.resolve(__dirname, 'app/containers'),
+      'components': path.resolve(__dirname, 'app/components'),
+      'component': path.resolve(__dirname, 'app/component')
+    }
+  },
   module: {
     rules:[
       {
@@ -58,7 +67,7 @@ module.exports = {
       // 凡是 'api' 开头的http请求，都会被代理到localhost:3000
       // koa 代码在./mock目录中，启动命令为npm run mock
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:3003',
         secure: false
       }
     },

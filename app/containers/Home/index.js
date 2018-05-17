@@ -8,6 +8,7 @@ import localStore from '../../util/localStore';
 // import Category from '../../Components/Category';
 import Category from '../../component/Category';
 import Ad from './subpage/Ad';
+import List from './subpage/List';
 import './style.less';
 
 class Home extends React.Component {
@@ -37,6 +38,7 @@ class Home extends React.Component {
           <Category></Category>
           <div className="spliter"></div>
           <Ad></Ad>
+          <List cityName={this.props.userinfo.cityName}></List>
         </div>
       </div>
     )
