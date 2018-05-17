@@ -1,6 +1,7 @@
 import React from 'react';
 import {getListData} from 'containers/fetch/home/home';
-
+import './style.less';
+import ListComponent from 'component/List'
 export default class List extends React.Component {
   constructor(props) {
     super(props);
@@ -36,10 +37,9 @@ export default class List extends React.Component {
   render() {
     return (
       <div>
-        <h2 className="home-list-title"></h2>
+        <h2 className="home-list-title">猜你喜欢</h2>
         <div>
-          {this.state.hasMore.toString()}
-          {this.state.data.length}
+          {this.state.data.length ? <ListComponent data={this.state.data}></ListComponent> : <div>加载中...</div>}
         </div>
       </div>
     )

@@ -19,7 +19,7 @@ export default class Category extends React.Component {
     var opt = {
       auto: 2000,
       callback: function (index) {
-        console.log(index)
+        // console.log(index)
         this.setState({index: index})
       }.bind(this)
     }
