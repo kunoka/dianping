@@ -31,7 +31,7 @@ router.get('/api/homead', async (ctx, next) => {
 // 首页 --推荐列表（猜你喜欢）
 var homeListData = require('./home/list');
 router.get('/api/homelist/:city/:page', async(ctx, next) => {
-  // 参数ß
+  // 参数
   console.log('---------------')
   console.log(ctx.req);
   console.log(ctx.response);
