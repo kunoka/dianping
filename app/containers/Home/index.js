@@ -1,6 +1,5 @@
 import React from 'react';
-import HomeHeader from '../../components/HomeHeader';
-import {CITYNAME} from '../../config/localStoreKey';
+import HomeHeader from '@/components/HomeHeader';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as UserInfoActionsFromOtherFile from '../../actions/userinfo';
@@ -19,7 +18,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     // 从localstorage里面获取城市
-    let cityName = localStore.getItem(CITYNAME);
+    let cityName = localStore.getItem('cityName');
     if (cityName == null) {
       cityName = '北京'
     }
