@@ -11,7 +11,7 @@ class City extends React.Component {
 
   render() {
     return (
-      <Header></Header>
+      <Header title="选择城市"></Header>
     )
   }
 }
