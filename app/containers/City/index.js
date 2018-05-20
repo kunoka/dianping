@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as UserInfoActionsFromOtherFile from '@/actions/userinfo';
 import Header from '@/component/Header';
+import CurrentCity from '@/component/CurrentCity';
 class City extends React.Component {
   componentDidMount() {
     console.log(this.props.userinfo)
@@ -11,7 +12,10 @@ class City extends React.Component {
 
   render() {
     return (
-      <Header title="选择城市"></Header>
+      <div>
+        <Header title="选择城市"></Header>
+        <CurrentCity cityName={this.props.userinfo.cityName}></CurrentCity>
+      </div>
     )
   }
 }
