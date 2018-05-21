@@ -3,9 +3,10 @@ import './style.less';
 import '../../static/css/common.less';
 import '../../static/css/font.css';
 import {Link} from 'react-router-dom';
+
 export default class HomeHeadr extends React.Component {
   render() {
-    return(
+    return (
       <div id="home-header" className="clear-fix">
         <Link to="/city">
           <div className="home-header-left float-left">
@@ -18,10 +19,12 @@ export default class HomeHeadr extends React.Component {
           <i className="icon-user"></i>
         </div>
         <div className="home-header-middle">
-          <div className="search-container">
-            <i className="icon-search"></i>
-            <input type="text" placeholder="请输入关键字"/>
-          </div>
+          <Link to='/search/all/123'>
+            <div className="search-container">
+              <i className="icon-search"></i>
+              <input type="text" placeholder="请输入关键字"/>
+            </div>
+          </Link>
         </div>
 
       </div>
