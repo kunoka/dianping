@@ -2,7 +2,7 @@ import React from 'react';
 import ReactSwipe from 'react-swipe';
 import './style.less';
 import {getAdData} from '../../containers/fetch/home/home';
-
+import {Link} from 'react-router-dom';
 export default class Category extends React.Component {
   constructor(props) {
     super(props);
@@ -28,7 +28,9 @@ export default class Category extends React.Component {
         <ReactSwipe className="carousel" swipeOptions={opt}>
           <div className="carousel-item">
             <ul className="clear-fix">
-              <li className="float-left jingdian">景点</li>
+              <Link to="/search/category/jingdian">
+                <li className="float-left jingdian">景点</li>
+              </Link>
               <li className="float-left ktv">KTV</li>
               <li className="float-left gouwu">购物</li>
               <li className="float-left shenghuofuwu">生活服务</li>
@@ -42,7 +44,9 @@ export default class Category extends React.Component {
           </div>
           <div className="carousel-item">
             <ul className="clear-fix">
-              <li className="float-left meishi">美食</li>
+              <Link to="/search/category/meishi">
+                <li className="float-left meishi">美食</li>
+              </Link>
               <li className="float-left dianying">电影</li>
               <li className="float-left jiudian">酒店</li>
               <li className="float-left xiuxianyule">休闲娱乐</li>
@@ -56,7 +60,9 @@ export default class Category extends React.Component {
           </div>
           <div className="carousel-item">
             <ul className="clear-fix">
-              <li className="float-left ribencai">日本菜</li>
+              <Link to="/search/category/ribencai">
+                <li className="float-left ribencai">日本菜</li>
+              </Link>
               <li className="float-left SPA">SPA</li>
               <li className="float-left jiehun">结婚</li>
               <li className="float-left xuexipeixun">学习培训</li>
