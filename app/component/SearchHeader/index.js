@@ -3,6 +3,7 @@ import './style.less';
 import '@/static/css/font.css';
 import SearchInput from 'component/SearchInput';
 import {Redirect} from 'react-router-dom';
+// import createHistory from'@/router/history.js';
 export default class SearchHeader extends React.Component {
   constructor(props) {
     super(props);
@@ -11,13 +12,16 @@ export default class SearchHeader extends React.Component {
       redirect: false
     }
     this.clickHandle = this.clickHandle.bind(this);
+    this.enterHandle = this.enterHandle.bind(this);
   }
   clickHandle(){
     window.history.back();
   }
   enterHandle(value) {
+    console.log(this)
+    console.log(value)
     this.setState({value: value})
-    this.setState({redirect: true})
+    // this.setState({redirect: true})
     // createHistory.push('/search/all/' + encodeURIComponent(value));
   }
   render() {
