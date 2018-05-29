@@ -1,12 +1,11 @@
 import React from 'react';
+import SearchHeader from '@/component/SearchHeader';
 
 export default class Search extends React.Component {
   render() {
     return(
       <div>
-        <h1>Search</h1>
-        <div>{this.props.match.params.category}</div>
-        <div>{this.props.match.params.id}</div>
+        <SearchHeader value={this.props.match.params.id}></SearchHeader>
       </div>
     )
   }
