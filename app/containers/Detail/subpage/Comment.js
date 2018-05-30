@@ -1,18 +1,21 @@
 import React from 'react';
-import {getListData} from 'containers/fetch/home/home';
 import './style.less';
-import ListComponent from 'component/List';
-import LoadMore from 'component/LoadMore';
+import CommentList from '@/component/CommentList';
+import LoadMore from '@/component/LoadMore';
+import {getCommentData} from '@/containers/fetch/detail/detail';
 
-export default class List extends React.Component {
+// 初始化一个组件的 state
+const initialState = {
+  data: [], // 渲染的数据
+  hasMore: false, // 是否有更多需要加载的数据
+  isLoadingMore: false, // 是否正在加载
+  page: 0 // 下一页
+}
+
+export default class Comment extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: [], // 渲染的数据
-      hasMore: false, // 是否有更多需要加载的数据
-      isLoadingMore: false, // 是否正在加载
-      page: 1 // 下一页
-    }
+    this.state = initialState
   }
 
   componentDidMount() {
@@ -22,8 +25,9 @@ export default class List extends React.Component {
 
   // 获取首屏数据
   loadFirstPageData() {
-    const cityName = this.props.cityName;
-    const result = getListData(cityName, 0);
+    let page = 0;
+    let id = this.props.id;
+    let result = getCommentData(id, page);
     this.resultHandle(result);
   }
 
@@ -35,7 +39,7 @@ export default class List extends React.Component {
     });
     const cityName = this.props.cityName;
     const page = this.state.page;
-    const result = getListData(cityName, page);
+    const result = getCommentData(cityName, page);
     this.resultHandle(result);
     // 增加 page 的计数
     this.setState({
@@ -43,6 +47,7 @@ export default class List extends React.Component {
       isLoadingMore: false
     });
   }
+
   resultHandle(result) {
     result.then(res => {
       return res.json()
@@ -55,12 +60,13 @@ export default class List extends React.Component {
       })
     })
   }
+
   render() {
     return (
       <div>
-        <h2 className="home-list-title">猜你喜欢</h2>
+        <h2 className="home-list-title">用户点评</h2>
         <div>
-          {this.state.data.length ? <ListComponent data={this.state.data}></ListComponent> : <div>加载中...</div>}
+          {this.state.data.length ? <CommentList data={this.state.data}></CommentList> : <div>加载中...</div>}
         </div>
         <div>
           {this.state.hasMore ? <LoadMore isLoadingMore={this.state.isLoadingMore} loadMoreFn={this.loadMoreData.bind(this)}></LoadMore> : ''}

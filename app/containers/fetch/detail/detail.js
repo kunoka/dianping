@@ -5,7 +5,7 @@ export function getInfoData(id) {
   return result;
 }
 
-export function getComponentData(page, id) {
-  const result = get('/api/detail/comment/' + page + '/' + id);
+export function getCommentData(id, page) {
+  const result = get('/api/detail/comment/' + id + '/' + page);
   return result;
 }

@@ -51,7 +51,14 @@ router.get('/api/post', async (ctx, next) => {
 var shopDetailData = require('./detail/info');
 router.get('/api/detail/info/:id', async(ctx, next) => {
   ctx.response.body = shopDetailData;
-})
+});
+// 用户点评
+var commentData = require('./detail/comment');
+router.get('/api/detail/comment/:id/:page', async(ctx, next) => {
+  ctx.response.body = commentData;
+  console.log(commentData)
+
+});
 app.use(router.routes());
 // 在端口3000监听:
 app.listen(3003);

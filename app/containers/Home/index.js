@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as UserInfoActionsFromOtherFile from '../../actions/userinfo';
 import localStore from '../../util/localStore';
+import Spliter from '@/component/Spliter';
 // import Category from '../../Components/Category';
 import Category from '../../component/Category';
 import Ad from './subpage/Ad';
@@ -34,9 +35,9 @@ class Home extends React.Component {
       <div>
         <div>
           <HomeHeader cityName={this.props.userinfo ? this.props.userinfo.cityName : ''}></HomeHeader>
-          <Category></Category>
-          <div className="spliter"></div>
-          <Ad></Ad>
+          <Category />
+          <Spliter />
+          <Ad />
           <List cityName={this.props.userinfo.cityName}></List>
         </div>
       </div>
