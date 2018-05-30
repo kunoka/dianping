@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.less';
 import {getInfoData} from '@/containers/fetch/detail/detail';
+import DetailInfo from '@/component/DetailInfo';
 
 export default class Info extends React.Component {
   constructor(props) {
@@ -24,7 +25,9 @@ export default class Info extends React.Component {
   }
   render() {
     return (
-      <div>{this.state.info ? '有数据' : ''}</div>
+      <div>
+        {this.state.info ? <DetailInfo data={this.state.info}></DetailInfo> : ''}
+      </div>
     )
   }
 }
