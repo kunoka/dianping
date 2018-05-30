@@ -6,7 +6,8 @@ module.exports = {
   entry: path.resolve(__dirname, 'app/index.js'),
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle[hash].js'
+    filename: 'bundle[hash].js',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', 'json'],

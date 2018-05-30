@@ -16,7 +16,7 @@ export default class Home extends React.Component {
     const stars = [1, 2, 3, 4, 5];
     return(
       stars.map((item, index) => {
-        const lightClass = star >= item ? 'light' : '';
+        const lightClass = star >= item ? 'light' : 'gray';
         return <i key={index} className={'icon-star-full ' + lightClass}/>
       })
     )
@@ -25,7 +25,7 @@ export default class Home extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="star">
         {this.renderStar()}
       </div>
     )

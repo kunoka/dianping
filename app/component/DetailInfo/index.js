@@ -10,13 +10,21 @@ export default class Home extends React.Component {
   render() {
     const data = this.props.data;
     return (
-      <div>
-        <img src={data.img} alt=""/>
-        <div className="">{data.title}</div>
-        <Star className="" star={data.star} />
-        <div className="">{data.price}</div>
-        <div className="">{data.subTitle}</div>
-        <div className="" dangerouslySetInnerHTML={{__html: data.desc}}></div>
+      <div id="detail-info-container">
+        <div className="info-container">
+          <div className="info-img-container">
+            <img src={data.img} alt=""/>
+          </div>
+          <div className="info-content">
+            <h1>{data.title}</h1>
+            <div className="star-container">
+              <Star star={data.star} />
+              <span className="price">￥{data.price}</span>
+            </div>
+            <p className="sub-title">{data.subTitle}</p>
+          </div>
+        </div>
+        <p className="desc" dangerouslySetInnerHTML={{__html: data.desc}}></p>
       </div>
     )
   }
