@@ -10,4 +10,3 @@ ReactDom.render((
   </Provider>
 
 ), document.getElementById('app'));
-console.log('123456123412223')

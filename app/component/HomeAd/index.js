@@ -8,8 +8,8 @@ export default class HomeAd extends React.Component {
 
   render() {
     const data = this.props.data;
-    console.log('=====data======');
-    console.log(data);
+    // console.log('=====data======');
+    // console.log(data);
     return (
       <div id='home-ad'>
         <h2>超值特惠</h2>

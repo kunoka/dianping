@@ -20,12 +20,10 @@ export default class SearchList extends React.Component {
   componentDidMount() {
     // eslint-disable-next-line
     // 获取首页数据
-    console.log('123');
     this.loadFirstPageData();
   }
 
   componentDidUpdate() {
-    console.log('ddd')
   }
   // 获取首屏数据
   loadFirstPageData() {
@@ -56,7 +54,6 @@ export default class SearchList extends React.Component {
     result.then(res => {
       return res.json()
     }).then(json => {
-      console.log(json)
       const hasMore = json.hasMore;
       const data = json.data;
       this.setState({

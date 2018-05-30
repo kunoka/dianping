@@ -18,8 +18,6 @@ export default class SearchHeader extends React.Component {
     window.history.back();
   }
   enterHandle(value) {
-    console.log(this)
-    console.log(value)
     this.setState({value: value})
     // this.setState({redirect: true})
     // createHistory.push('/search/all/' + encodeURIComponent(value));
@@ -27,7 +25,6 @@ export default class SearchHeader extends React.Component {
   render() {
     if (this.state.redirect) {
       let url = '/search/all/' + encodeURIComponent(this.state.value);
-      console.log('url', url)
       return <Redirect push to={url} />
     }
     return (

@@ -47,7 +47,6 @@ export default class List extends React.Component {
     result.then(res => {
       return res.json()
     }).then(json => {
-      console.log(json)
       const hasMore = json.hasMore;
       const data = json.data;
       this.setState({

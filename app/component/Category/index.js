@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactSwipe from 'react-swipe';
 import './style.less';
-import {getAdData} from '../../containers/fetch/home/home';
+// import {getAdData} from '../../containers/fetch/home/home';
 import {Link} from 'react-router-dom';
 export default class Category extends React.Component {
   constructor(props) {
@@ -12,8 +12,8 @@ export default class Category extends React.Component {
   }
 
   componentDidMount() {
-    let result = getAdData();
-    console.log(result)
+    // let result = getAdData();
+    // console.log(result)
   }
   render() {
     var opt = {

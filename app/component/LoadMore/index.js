@@ -14,7 +14,7 @@ export default class Home extends React.Component {
       const top = wrapper.getBoundingClientRect().top;
       const windowHeight = window.screen.height;
       if(top && top < windowHeight) {
-        console.log(top,windowHeight)
+        // console.log(top,windowHeight)
         // 当 wrapper 滚动到暴露在页面的可视范围内时刷新
         loadMoreFn()
       }

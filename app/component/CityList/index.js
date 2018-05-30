@@ -25,7 +25,7 @@ export default class CityList extends React.Component {
   clickHandle(cityName) {
     // //eslint-disable-next-line
     // debugger
-    console.log(cityName)
+    // console.log(cityName)
     this.props.clickFn(cityName);
   }
   render() {

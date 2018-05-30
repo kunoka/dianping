@@ -47,6 +47,11 @@ router.get('/api/homelist/:city/:page', async(ctx, next) => {
 router.get('/api/post', async (ctx, next) => {
   ctx.response.body = JSON.stringify(ctx);
 });
+// 商户详情
+var shopDetailData = require('./detail/info');
+router.get('/api/detail/info/:id', async(ctx, next) => {
+  ctx.response.body = shopDetailData;
+})
 app.use(router.routes());
 // 在端口3000监听:
 app.listen(3003);

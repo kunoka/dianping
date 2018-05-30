@@ -17,9 +17,6 @@ export default class HomeHeadr extends React.Component {
   }
 
   componentDidMount() {
-    console.log('context')
-    console.log(this.context)
-
   }
 
   // handleChange(e) {
@@ -43,7 +40,6 @@ export default class HomeHeadr extends React.Component {
   render() {
     if (this.state.redirect) {
       let url = '/search/all/' + encodeURIComponent(this.state.value);
-      console.log('url', url)
       return <Redirect push to={url} />
     }
     return (

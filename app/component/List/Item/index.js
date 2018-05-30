@@ -9,7 +9,6 @@ export default class Item extends React.Component {
 
   render() {
     const data = this.props.data;
-    console.log(data)
     return (
       <div className="list-item">
         <Link to={'/detail/' + data.mumber}>

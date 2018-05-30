@@ -8,12 +8,9 @@ import CityList from '@/component/CityList';
 import localStore from '../../util/localStore';
 class City extends React.Component {
   componentDidMount() {
-    console.log(this.props.userinfo)
-    console.log(this.props.userinfoActions)
   }
 
   changeCity(cityName) {
-    console.log(cityName)
     this.props.userinfoActions.update({cityName});
     localStore.setItem('cityName', cityName)
   }
