@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.less';
+import Star from '@/component/Star';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export default class Home extends React.Component {
       <div>
         <img src={data.img} alt=""/>
         <div className="">{data.title}</div>
-        <div className="">{data.star}</div>
+        <Star className="" star={data.star} />
         <div className="">{data.price}</div>
         <div className="">{data.subTitle}</div>
         <div className="" dangerouslySetInnerHTML={{__html: data.desc}}></div>
