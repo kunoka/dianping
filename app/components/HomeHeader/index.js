@@ -51,9 +51,11 @@ export default class HomeHeadr extends React.Component {
             <i className="icon-angle-down"></i>
           </div>
         </Link>
-        <div className="home-header-right float-right">
-          <i className="icon-user"></i>
-        </div>
+        <Link to="/login">
+          <div className="home-header-right float-right">
+            <i className="icon-user"></i>
+          </div>
+        </Link>
         <div className="home-header-middle">
           <div className="search-container">
             <i className="icon-search"></i>
