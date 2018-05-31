@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as UserInfoActionsFromOtherFile from '../../actions/userinfo';
 import {Redirect} from 'react-router-dom';
-// import userinfo from '../../reducers/userinfo';
+import LoginComponent from '@/component/Login';
 
 class Login extends React.Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class Login extends React.Component {
       checking: true,
       redirect: false
     }
+    this.loginHandle = this.loginHandle.bind(this);
   }
 
   componentDidMount() {
@@ -28,23 +29,30 @@ class Login extends React.Component {
     userinfo.username = username;
     actions.update(userinfo);
     //跳转链接
-    const router = this.props.match.params.router;
-    if (router) {
-      //跳转到指定页面
-      this.setState({
-        redirect: true
-      })
-    }else{
-      //跳转到默认页面 用户中心
-      this.goUserPage()
-    }
+    // const router = this.props.match.params.router;
+    // if (router) {
+    //   //跳转到指定页面
+    //   this.setState({
+    //     redirect: true
+    //   })
+    // }else{
+    //   //跳转到默认页面 用户中心
+    this.goUserPage()
+    // }
   }
+
+  goUserPage() {
+    this.setState({
+      redirect: true
+    })
+  }
+
   doCheck() {
     const userinfo = this.props.userinfo;
-    if(userinfo.username) {
+    if (userinfo.username) {
       // 已经登录
       this.gotUserPage();
-    }else{
+    } else {
       // 尚未登录
       this.setState({
         checking: false
@@ -54,32 +62,35 @@ class Login extends React.Component {
 
   render() {
     if (this.state.redirect) {
-      let url = '/';
-      return <Redirect push to={url} />
+      let url = '/user';
+      return <Redirect push to={url}/>
     }
     return (
-      <div>
+      <div className="login">
         <Header title="登录"></Header>
         {
           this.state.checking
             ? <div>{/*等待中*/}</div>
-            : <div>这里将展示登录组件</div>
+            : <div>
+              <LoginComponent loginHandle={this.loginHandle}></LoginComponent>
+            </div>
         }
       </div>
     )
   }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {
     userinfo: state.userinfo
   }
 
 }
-function mapDispatchToProps(dispatch)
-{
+
+function mapDispatchToProps(dispatch) {
   return {
     userinfoActions: bindActionCreators(UserInfoActionsFromOtherFile, dispatch)
   }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

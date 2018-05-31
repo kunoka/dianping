@@ -7,7 +7,6 @@ import User from '../containers/User';
 import Search from '../containers/Search';
 import Detail from '../containers/Detail';
 import Login from '../containers/Login';
-
 // import NotFound from '../containers/404';
 
 export default class RouterMap extends React.Component {
@@ -22,6 +21,7 @@ export default class RouterMap extends React.Component {
           <Route exact path="/detail/:id" component={Detail}></Route>
           <Route exact path="/login" component={Login}></Route>
           <Route exact path="/login/:router" component={Login}></Route>
+          <Route exact path="/user" component={User}></Route>
           {/*<Route path="*" component={NotFound}></Route>*/}
         </div>
       </Router>
