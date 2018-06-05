@@ -42,6 +42,7 @@ export default class HomeHeadr extends React.Component {
       let url = '/search/all/' + encodeURIComponent(this.state.value);
       return <Redirect push to={url} />
     }
+    const url = '/login/' + encodeURIComponent('/user');
     return (
       <div id="home-header" className="clear-fix">
         <Link to="/city">
@@ -51,7 +52,7 @@ export default class HomeHeadr extends React.Component {
             <i className="icon-angle-down"></i>
           </div>
         </Link>
-        <Link to="/login">
+        <Link to={url}>
           <div className="home-header-right float-right">
             <i className="icon-user"></i>
           </div>

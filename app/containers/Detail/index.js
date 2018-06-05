@@ -12,7 +12,7 @@ export default class Detail extends React.Component {
       <div>
         <Header title="商户详情"/>
         <Info id={id} />
-        <Buy />
+        <Buy id={id} />
         <Spliter />
         <Comment id={id} />
       </div>

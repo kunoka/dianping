@@ -62,8 +62,10 @@ class Login extends React.Component {
 
   render() {
     if (this.state.redirect) {
-      let url = '/user';
-      return <Redirect push to={url}/>
+      let url = this.props.match.params.router == undefined ? '/' : this.props.match.params.router;
+      console.log('=== login url ===')
+      console.log(decodeURIComponent(url))
+      return <Redirect push to={decodeURIComponent(url)}/>
     }
     return (
       <div className="login">
