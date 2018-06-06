@@ -20,8 +20,8 @@ class Buy extends React.Component {
   }
 
   componentDidMount() {
-    console.log('123', this.props.store);
-    console.log('456', this.props.storeActions);
+    // console.log('123', this.props.store);
+    // console.log('456', this.props.storeActions);
     // this.buyHandle();
   }
   buyHandle() {
@@ -36,8 +36,21 @@ class Buy extends React.Component {
 
   }
 
+  // 收藏事件
   storeHandle() {
-
+    // 验证登录
+    const loginFlag = this.loginCheck();
+    if(!loginFlag) {
+      return;
+    }
+    const id = this.props.id;
+    const storeActions = this.props.storeActions;
+    // 被收藏过，取消收藏
+    if(this.state.isStore) {
+      storeActions.rm({id:id});
+    }else{ // 增加收藏
+      storeActions.add({id: id});
+    }
   }
 
   //验证登录
