@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.less';
+import {Link} from 'react-router-dom';
+
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -20,11 +22,15 @@ export default class Login extends React.Component {
   clickHandle(){
     let username = this.state.phone;
     this.props.loginHandle(username);
+    //eslint-disable-next-line
+    // debugger;
     // this.setState({
     //   redirect: true
     // })
   }
   render() {
+    // eslint-disable-next-line
+    // debugger;
     return (
       <div className="login-container">
         <div className="input-container phone-container">
@@ -36,7 +42,9 @@ export default class Login extends React.Component {
           <input type="text" placeholder="请输入验证码"/>
           <button>发送验证码</button>
         </div>
-        <button className="btn-login" onClick={this.clickHandle}>登录</button>
+        <Link to={this.props.url}>
+          <button className="btn-login" onClick={this.clickHandle}>登录</button>
+        </Link>
       </div>
     );
   }

@@ -23,7 +23,9 @@ class Buy extends React.Component {
     // console.log('123', this.props.store);
     // console.log('456', this.props.storeActions);
     // this.buyHandle();
+    this.checkStoreState();
   }
+
   buyHandle() {
     //验证登录
     const loginFlag = this.loginCheck();
@@ -35,22 +37,39 @@ class Buy extends React.Component {
     // 跳转到用户主页
 
   }
-
+  // 检验当前商户是否已经被收藏
+  checkStoreState() {
+    const id = this.props.id;
+    const store = this.props.store;
+    store.some(item => {
+      if(item.id === id) {
+        this.setState({
+          isStore: true
+        });
+        return true;
+      }
+    });
+  }
   // 收藏事件
   storeHandle() {
     // 验证登录
     const loginFlag = this.loginCheck();
-    if(!loginFlag) {
+    if (!loginFlag) {
       return;
     }
     const id = this.props.id;
     const storeActions = this.props.storeActions;
     // 被收藏过，取消收藏
-    if(this.state.isStore) {
-      storeActions.rm({id:id});
-    }else{ // 增加收藏
+    if (this.state.isStore) {
+      // eslint-disable-next-line
+      // debugger;
+      storeActions.rm({id: id});
+    } else { // 增加收藏
       storeActions.add({id: id});
     }
+    this.setState({
+      isStore: !this.state.isStore
+    });
   }
 
   //验证登录

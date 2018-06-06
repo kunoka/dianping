@@ -6,6 +6,13 @@ import Spliter from '@/component/Spliter';
 import Buy from  './subpage/Buy';
 
 export default class Detail extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    console.log(this);
+  }
   render() {
     const id = this.props.match.params.id;
     return (

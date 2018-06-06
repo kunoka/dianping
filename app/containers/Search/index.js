@@ -7,7 +7,7 @@ export default class Search extends React.Component {
     return (
       <div>
         <SearchHeader value={this.props.match.params.id}></SearchHeader>
-        <SearchList category={this.props.match.params.category} keyword={this.props.match.params.id} />
+        <SearchList category={this.props.match.params.category} id={this.props.match.params.id} />
       </div>
     );
   }

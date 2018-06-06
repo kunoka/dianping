@@ -10,7 +10,7 @@ export default class List extends React.Component {
   render() {
     return (
       <div>{this.props.data.map((item,index) => {
-        return <Item key={index} data={item}></Item>;
+        return <Item key={index} data={item} category={this.props.category} id={this.props.id}></Item>;
       })}</div>
     );
   }

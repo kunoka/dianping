@@ -3,24 +3,29 @@ import './style.less';
 import '@/static/css/font.css';
 import SearchInput from 'component/SearchInput';
 import {Redirect} from 'react-router-dom';
-// import createHistory from'@/router/history.js';
+import {Link} from 'react-router-dom';
+
 export default class SearchHeader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       value:'',
-      redirect: false
+      redirect: false,
+      nextUrl: ''
     };
-    this.clickHandle = this.clickHandle.bind(this);
+    // this.clickHandle = this.clickHandle.bind(this);
     this.enterHandle = this.enterHandle.bind(this);
-  }
-  clickHandle(){
-    window.history.back();
   }
   enterHandle(value) {
     this.setState({value: value});
-    // this.setState({redirect: true})
+    this.setState({
+      nextUrl: '/search/all/' + encodeURIComponent(value)
+    });
+    this.setState({redirect: true});
     // createHistory.push('/search/all/' + encodeURIComponent(value));
+  }
+  clickHandle() {
+
   }
   render() {
     if (this.state.redirect) {
@@ -29,9 +34,11 @@ export default class SearchHeader extends React.Component {
     }
     return (
       <div id="search-header">
-        <span className="back-icon" onClick={this.clickHandle}>
-          <i className="icon-chevron-left"></i>
-        </span>
+        <Link to={this.state.nextUrl}>
+          <span className="back-icon" onClick={this.clickHandle}>
+            <i className="icon-chevron-left"></i>
+          </span>
+        </Link>
         <div className="input-container">
           <i className="icon-search"></i>
           &nbsp;

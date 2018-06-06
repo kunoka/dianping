@@ -15,21 +15,18 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
   }
-
-
   componentDidMount() {
-    // 从localstorage里面获取城市
+    // 从localstorage里面获取城市和用户登录信息
     let cityName = localStore.getItem('cityName');
+    // let userName = localStore.getItem('userName');
     if (cityName == null) {
       cityName = '北京';
     }
     // 将城市信息存储到 Redux 中
-    this.props.userinfoActions.change({
-      cityName: cityName
-    });
-
+    // this.props.userinfoActions.change({
+    //   cityName: cityName
+    // });
   }
-
   render() {
     return (
       <div>

@@ -34,10 +34,10 @@ class App extends React.Component {
       cityName = '深圳';
     }
     // 将城市信息存储到 Redux 中
-    this.props.userinfoActions.update({cityName: cityName})
+    this.props.userinfoActions.update({cityName: cityName});
     this.props.userinfoActions.test({
       time: new Date().toISOString()
-    })
+    });
     this.setState({
       initDone: true
     });

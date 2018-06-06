@@ -4,7 +4,7 @@ import Header from '@/component/Header';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as UserInfoActionsFromOtherFile from '../../actions/userinfo';
-import {Redirect} from 'react-router-dom';
+// import {Redirect} from 'react-router-dom';
 import LoginComponent from '@/component/Login';
 
 class Login extends React.Component {
@@ -37,21 +37,21 @@ class Login extends React.Component {
     //   })
     // }else{
     //   //跳转到默认页面 用户中心
-    this.goUserPage();
+    // this.goUserPage();
     // }
   }
 
-  goUserPage() {
-    this.setState({
-      redirect: true
-    });
-  }
+  // goUserPage() {
+  //   this.setState({
+  //     redirect: true
+  //   });
+  // }
 
   doCheck() {
     const userinfo = this.props.userinfo;
     if (userinfo.username) {
       // 已经登录
-      this.gotUserPage();
+      this.goUserPage();
     } else {
       // 尚未登录
       this.setState({
@@ -61,12 +61,14 @@ class Login extends React.Component {
   }
 
   render() {
-    if (this.state.redirect) {
-      let url = this.props.match.params.router == undefined ? '/' : this.props.match.params.router;
-      console.log('=== login url ===');
-      console.log(decodeURIComponent(url));
-      return <Redirect push to={decodeURIComponent(url)}/>;
-    }
+    // if (this.state.redirect) {
+    //   let url = this.props.match.params.router == undefined ? '/' : this.props.match.params.router;
+    //   console.log('=== login url ===');
+    //   console.log(decodeURIComponent(url));
+    //   return <Redirect push to={decodeURIComponent(url)}/>;
+    // }
+
+    let url = this.props.match.params.router === undefined ? '/' : this.props.match.params.router;
     return (
       <div className="login">
         <Header title="登录"></Header>
@@ -74,7 +76,7 @@ class Login extends React.Component {
           this.state.checking
             ? <div>{/*等待中*/}</div>
             : <div>
-              <LoginComponent loginHandle={this.loginHandle}></LoginComponent>
+              <LoginComponent url={decodeURIComponent(url)} loginHandle={this.loginHandle}></LoginComponent>
             </div>
         }
       </div>

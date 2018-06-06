@@ -62,11 +62,12 @@ export default class SearchList extends React.Component {
       });
     });
   }
+
   render() {
     return (
       <div>
         <div>
-          {this.state.data.length ? <ListComponent data={this.state.data}></ListComponent> : <div>加载中...</div>}
+          {this.state.data.length ? <ListComponent data={this.state.data} category={this.props.category} id={this.props.id} /> : <div>加载中...</div>}
         </div>
         <div>
           {this.state.hasMore ? <LoadMore isLoadingMore={this.state.isLoadingMore} loadMoreFn={this.loadMoreData.bind(this)}></LoadMore> : ''}
