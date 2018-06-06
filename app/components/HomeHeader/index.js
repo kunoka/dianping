@@ -2,7 +2,7 @@ import React from 'react';
 import './style.less';
 import '../../static/css/common.less';
 import '../../static/css/font.css';
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 // import createHistory from '@/router/history';
 import SearchInput from 'component/SearchInput';
 
@@ -10,7 +10,7 @@ export default class HomeHeadr extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      redirect: '',
+      // redirect: '',
       value: ''
     };
     this.enterHandle = this.enterHandle.bind(this);
@@ -38,11 +38,11 @@ export default class HomeHeadr extends React.Component {
   }
 
   render() {
-    if (this.state.redirect) {
-      let url = '/search/all/' + encodeURIComponent(this.state.value);
-      return <Redirect push to={url} />;
-    }
-    const url = '/login/' + encodeURIComponent('/user');
+    // if (this.state.redirect) {
+    //   let url = '/search/all/' + encodeURIComponent(this.state.value);
+    //   return <Redirect push to={url} />;
+    // }
+    const url = '/user';
     return (
       <div id="home-header" className="clear-fix">
         <Link to="/city">

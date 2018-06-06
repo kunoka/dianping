@@ -51,7 +51,7 @@ class Login extends React.Component {
     const userinfo = this.props.userinfo;
     if (userinfo.username) {
       // 已经登录
-      this.goUserPage();
+      // this.goUserPage();
     } else {
       // 尚未登录
       this.setState({

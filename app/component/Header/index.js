@@ -6,10 +6,15 @@ import {Link} from 'react-router-dom';
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
     this.clickHandle = this.clickHandle.bind(this);
   }
 
   clickHandle() {
+    // this.setState({
+    //   url: '/search/category/jingdian'
+    // });
+    // console.log('url', this.state.url);
   }
 
   render() {
@@ -17,9 +22,9 @@ export default class Header extends React.Component {
     // debugger;
     return (
       <div id="common-header">
-        <Link to="/search/category/jingdian">
+        <Link to={this.props.backRouter ? this.props.backRouter : '/'}>
           <span className='back-icon' onClick={this.clickHandle}>
-            <i className="icon-chevron-left"></i>
+            <i className="icon-chevron-left" />{this.state.url}
           </span>
         </Link>
         <h1>{this.props.title}</h1>

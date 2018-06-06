@@ -17,7 +17,7 @@ export default class Detail extends React.Component {
     const id = this.props.match.params.id;
     return (
       <div>
-        <Header title="商户详情"/>
+        <Header title="商户详情" backRouter="/search/category/jingdian"/>
         <Info id={id} />
         <Buy id={id} />
         <Spliter />
