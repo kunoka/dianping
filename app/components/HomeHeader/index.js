@@ -4,7 +4,7 @@ import '../../static/css/common.less';
 import '../../static/css/font.css';
 import {Link, Redirect} from 'react-router-dom';
 // import createHistory from '@/router/history';
-import SearchInput from 'component/SearchInput'
+import SearchInput from 'component/SearchInput';
 
 export default class HomeHeadr extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ export default class HomeHeadr extends React.Component {
     this.state = {
       redirect: '',
       value: ''
-    }
+    };
     this.enterHandle = this.enterHandle.bind(this);
   }
 
@@ -32,15 +32,15 @@ export default class HomeHeadr extends React.Component {
   //   createHistory.push('/search/all/' + encodeURIComponent(this.state.kwd))
   // }
   enterHandle(value) {
-    this.setState({value: value})
-    this.setState({redirect: true})
+    this.setState({value: value});
+    this.setState({redirect: true});
     // createHistory.push('/search/all/' + encodeURIComponent(value));
   }
 
   render() {
     if (this.state.redirect) {
       let url = '/search/all/' + encodeURIComponent(this.state.value);
-      return <Redirect push to={url} />
+      return <Redirect push to={url} />;
     }
     const url = '/login/' + encodeURIComponent('/user');
     return (
@@ -66,6 +66,6 @@ export default class HomeHeadr extends React.Component {
         </div>
 
       </div>
-    )
+    );
   }
 }

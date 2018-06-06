@@ -21,12 +21,12 @@ class Home extends React.Component {
     // 从localstorage里面获取城市
     let cityName = localStore.getItem('cityName');
     if (cityName == null) {
-      cityName = '北京'
+      cityName = '北京';
     }
     // 将城市信息存储到 Redux 中
     this.props.userinfoActions.change({
       cityName: cityName
-    })
+    });
 
   }
 
@@ -41,7 +41,7 @@ class Home extends React.Component {
           <List cityName={this.props.userinfo.cityName}></List>
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -51,7 +51,7 @@ mapStateToProps(state) {
   return {
     userinfo: state.userinfo,
     tmptest: state.tmptest
-  }
+  };
 }
 
 function
@@ -59,8 +59,8 @@ function
 mapDispatchToProps(dispatch) {
   return {
     userinfoActions: bindActionCreators(UserInfoActionsFromOtherFile, dispatch)
-  }
+  };
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

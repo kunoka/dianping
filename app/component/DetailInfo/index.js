@@ -26,6 +26,6 @@ export default class Home extends React.Component {
         </div>
         <p className="desc" dangerouslySetInnerHTML={{__html: data.desc}}></p>
       </div>
-    )
+    );
   }
 }

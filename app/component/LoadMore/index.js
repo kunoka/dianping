@@ -16,7 +16,7 @@ export default class Home extends React.Component {
       if(top && top < windowHeight) {
         // console.log(top,windowHeight)
         // 当 wrapper 滚动到暴露在页面的可视范围内时刷新
-        loadMoreFn()
+        loadMoreFn();
       }
     }
     window.addEventListener('scroll', function () {
@@ -28,12 +28,12 @@ export default class Home extends React.Component {
       }
       // 节流
       timeoutId = setTimeout(callback, 50);
-    }.bind(this), false)
+    }.bind(this), false);
   }
 
   loadMoreHandle() {
     // 执行传递过来的loadMoreData函数
-    this.props.loadMoreFn()
+    this.props.loadMoreFn();
   }
 
   render() {
@@ -45,6 +45,6 @@ export default class Home extends React.Component {
             <span onClick={this.loadMoreHandle.bind(this)}>加载更多</span>
         }
       </div>
-    )
+    );
   }
 }

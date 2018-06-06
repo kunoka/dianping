@@ -10,7 +10,7 @@ export default class SearchHeader extends React.Component {
     this.state = {
       value:'',
       redirect: false
-    }
+    };
     this.clickHandle = this.clickHandle.bind(this);
     this.enterHandle = this.enterHandle.bind(this);
   }
@@ -18,14 +18,14 @@ export default class SearchHeader extends React.Component {
     window.history.back();
   }
   enterHandle(value) {
-    this.setState({value: value})
+    this.setState({value: value});
     // this.setState({redirect: true})
     // createHistory.push('/search/all/' + encodeURIComponent(value));
   }
   render() {
     if (this.state.redirect) {
       let url = '/search/all/' + encodeURIComponent(this.state.value);
-      return <Redirect push to={url} />
+      return <Redirect push to={url} />;
     }
     return (
       <div id="search-header">
@@ -38,6 +38,6 @@ export default class SearchHeader extends React.Component {
           <SearchInput value={this.props.value || ''} enterHandle={this.enterHandle}></SearchInput>
         </div>
       </div>
-    )
+    );
   }
 }

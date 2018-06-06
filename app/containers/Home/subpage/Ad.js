@@ -7,7 +7,7 @@ export default class Home extends React.Component {
     super(props);
     this.state = {
       data: []
-    }
+    };
   }
 
   componentDidMount() {
@@ -21,9 +21,9 @@ export default class Home extends React.Component {
       if (data.length) {
         this.setState({
           data: data
-        })
+        });
       }
-    })
+    });
   }
 
   render() {
@@ -32,6 +32,6 @@ export default class Home extends React.Component {
         this.state.data.length ? <HomeAd data={this.state.data}></HomeAd> : 'loading'
       }
       </div>
-    )
+    );
   }
 }

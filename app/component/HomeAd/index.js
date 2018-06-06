@@ -22,10 +22,10 @@ export default class HomeAd extends React.Component {
                   <img src={item.img} alt="" style={{width: '100px'}}/>
                 </a>
               </div>
-            )
+            );
           })
         }
       </div>
-    )
+    );
   }
 }

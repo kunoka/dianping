@@ -8,26 +8,26 @@ export default class Info extends React.Component {
     super(props);
     this.state = {
       info: false
-    }
+    };
   }
 
   componentDidMount() {
     const id = this.props.id;
     let result = getInfoData(id);
     result.then((res) => {
-      return res.json()
+      return res.json();
     }).then((json) => {
       console.log(json);
       this.setState({
         info: json
-      })
-    })
+      });
+    });
   }
   render() {
     return (
       <div>
         {this.state.info ? <DetailInfo data={this.state.info}></DetailInfo> : ''}
       </div>
-    )
+    );
   }
 }

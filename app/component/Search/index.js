@@ -10,6 +10,6 @@ export default class Home extends React.Component {
       <div>
         <h1>Search</h1>
       </div>
-    )
+    );
   }
 }

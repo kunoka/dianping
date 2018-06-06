@@ -30,6 +30,6 @@ export default class Item extends React.Component {
           </div>
         </Link>
       </div>
-    )
+    );
   }
 }

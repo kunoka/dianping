@@ -6,7 +6,7 @@ export default class Login extends React.Component {
     this.state = {
       phone: '',
       redirect: false
-    }
+    };
     this.changeHandle = this.changeHandle.bind(this);
     this.clickHandle = this.clickHandle.bind(this);
   }
@@ -14,7 +14,7 @@ export default class Login extends React.Component {
   changeHandle(e) {
     this.setState({
       phone: e.target.value
-    })
+    });
   }
 
   clickHandle(){
@@ -38,6 +38,6 @@ export default class Login extends React.Component {
         </div>
         <button className="btn-login" onClick={this.clickHandle}>登录</button>
       </div>
-    )
+    );
   }
 }

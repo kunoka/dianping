@@ -8,7 +8,7 @@ export default class Category extends React.Component {
     super(props);
     this.state = {
       index: 0
-    }
+    };
   }
 
   componentDidMount() {
@@ -20,9 +20,9 @@ export default class Category extends React.Component {
       auto: 2000,
       callback: function (index) {
         // console.log(index)
-        this.setState({index: index})
+        this.setState({index: index});
       }.bind(this)
-    }
+    };
     return (
       <div id="home-category">
         <ReactSwipe className="carousel" swipeOptions={opt}>
@@ -134,6 +134,6 @@ export default class Category extends React.Component {
           </ul>
         </div>
       </div>
-    )
+    );
   }
 }

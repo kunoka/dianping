@@ -12,7 +12,7 @@ export default class List extends React.Component {
       hasMore: false, // 是否有更多需要加载的数据
       isLoadingMore: false, // 是否正在加载
       page: 1 // 下一页
-    }
+    };
   }
 
   componentDidMount() {
@@ -45,15 +45,15 @@ export default class List extends React.Component {
   }
   resultHandle(result) {
     result.then(res => {
-      return res.json()
+      return res.json();
     }).then(json => {
       const hasMore = json.hasMore;
       const data = json.data;
       this.setState({
         data: this.state.data.concat(data),
         hasMore: hasMore
-      })
-    })
+      });
+    });
   }
   render() {
     return (
@@ -66,6 +66,6 @@ export default class List extends React.Component {
           {this.state.hasMore ? <LoadMore isLoadingMore={this.state.isLoadingMore} loadMoreFn={this.loadMoreData.bind(this)}></LoadMore> : ''}
         </div>
       </div>
-    )
+    );
   }
 }

@@ -34,7 +34,7 @@
     //禁用debugger
     "no-var": 0,
     //对var警告
-    "semi": 0,
+    "semi": ["error","always"],
     //不强制使用分号
     "no-irregular-whitespace": 0,
     //不规则的空白不允许

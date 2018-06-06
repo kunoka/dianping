@@ -9,7 +9,7 @@ const initialState = {
   hasMore: false, // 是否有更多需要加载的数据
   isLoadingMore: false, // 是否正在加载
   page: 0 // 下一页
-}
+};
 
 export default class SearchList extends React.Component {
   constructor(props) {
@@ -52,15 +52,15 @@ export default class SearchList extends React.Component {
   }
   resultHandle(result) {
     result.then(res => {
-      return res.json()
+      return res.json();
     }).then(json => {
       const hasMore = json.hasMore;
       const data = json.data;
       this.setState({
         data: this.state.data.concat(data),
         hasMore: hasMore
-      })
-    })
+      });
+    });
   }
   render() {
     return (
@@ -73,6 +73,6 @@ export default class SearchList extends React.Component {
         </div>
 
       </div>
-    )
+    );
   }
 }

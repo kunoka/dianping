@@ -24,6 +24,6 @@ export default class RouterMap extends React.Component {
           {/*<Route path="*" component={NotFound}></Route>*/}
         </div>
       </Router>
-    )
+    );
   }
 }

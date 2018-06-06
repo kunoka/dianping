@@ -8,15 +8,15 @@ export default class CommentList extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.data)
+    console.log(this.props.data);
   }
   render() {
     return (
       <div>
         {this.props.data.map((item, index) => {
-          return(<Item key={index} data={item} />)
+          return(<Item key={index} data={item} />);
         })}
       </div>
-    )
+    );
   }
 }

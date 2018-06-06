@@ -16,6 +16,6 @@ export default class Detail extends React.Component {
         <Spliter />
         <Comment id={id} />
       </div>
-    )
+    );
   }
 }

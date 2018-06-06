@@ -9,6 +9,6 @@ export default class BuyAndStore extends React.Component {
   render() {
     return (
       <div>BuyAndStore</div>
-    )
+    );
   }
 }

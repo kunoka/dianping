@@ -12,7 +12,7 @@ class City extends React.Component {
 
   changeCity(cityName) {
     this.props.userinfoActions.update({cityName});
-    localStore.setItem('cityName', cityName)
+    localStore.setItem('cityName', cityName);
   }
 
   render() {
@@ -22,21 +22,21 @@ class City extends React.Component {
         <CurrentCity cityName={this.props.userinfo.cityName}></CurrentCity>
         <CityList clickFn={this.changeCity.bind(this)}></CityList>
       </div>
-    )
+    );
   }
 }
 
 function mapStateToProps(state) {
   return {
     userinfo: state.userinfo
-  }
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     userinfoActions: bindActionCreators(UserInfoActionsFromOtherFile,dispatch)
-  }
+  };
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(City)
+export default connect(mapStateToProps, mapDispatchToProps)(City);

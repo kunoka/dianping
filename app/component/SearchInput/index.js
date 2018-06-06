@@ -6,7 +6,7 @@ export default class SearchInput extends React.Component {
     super(props);
     this.state = {
       value: ''
-    }
+    };
     this.changeHandle = this.changeHandle.bind(this);
     this.KeyUpHandle = this.KeyUpHandle.bind(this);
   }
@@ -14,18 +14,18 @@ export default class SearchInput extends React.Component {
   componentDidMount() {
     this.setState({
       value: this.props.value || ''
-    })
+    });
   }
 
   changeHandle(e) {
     this.setState({
       value: e.target.value
-    })
+    });
   }
 
   KeyUpHandle(e) {
     if (e.keyCode !== 13) {
-      return
+      return;
     }
     this.props.enterHandle(this.state.value);
   }
@@ -33,6 +33,6 @@ export default class SearchInput extends React.Component {
   render() {
     return (
       <input className="search-input" value={this.state.value} type="text" placeholder="请输入关键字" onChange={this.changeHandle} onKeyUp={this.KeyUpHandle}/>
-    )
+    );
   }
 }

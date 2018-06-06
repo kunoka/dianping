@@ -4,7 +4,7 @@ import './style.less';
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.clickHandle = this.clickHandle.bind(this)
+    this.clickHandle = this.clickHandle.bind(this);
   }
   clickHandle() {
     window.history.back();
@@ -17,6 +17,6 @@ export default class Header extends React.Component {
         </span>
         <h1>{this.props.title}</h1>
       </div>
-    )
+    );
   }
 }

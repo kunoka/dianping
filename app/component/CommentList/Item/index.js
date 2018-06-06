@@ -8,8 +8,8 @@ export default class Item extends React.Component {
   }
 
   componentDidMount() {
-    console.log('===item===')
-    console.log(this.props.data)
+    console.log('===item===');
+    console.log(this.props.data);
   }
 
   render() {
@@ -23,7 +23,6 @@ export default class Item extends React.Component {
         <Star className="Star" star={item.star}></Star>
         <div className="comment">{item.comment}</div>
       </div>
-
-    )
+    );
   }
 }

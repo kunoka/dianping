@@ -13,7 +13,7 @@ class Login extends React.Component {
     this.state = {
       checking: true,
       redirect: false
-    }
+    };
     this.loginHandle = this.loginHandle.bind(this);
   }
 
@@ -37,14 +37,14 @@ class Login extends React.Component {
     //   })
     // }else{
     //   //跳转到默认页面 用户中心
-    this.goUserPage()
+    this.goUserPage();
     // }
   }
 
   goUserPage() {
     this.setState({
       redirect: true
-    })
+    });
   }
 
   doCheck() {
@@ -56,16 +56,16 @@ class Login extends React.Component {
       // 尚未登录
       this.setState({
         checking: false
-      })
+      });
     }
   }
 
   render() {
     if (this.state.redirect) {
       let url = this.props.match.params.router == undefined ? '/' : this.props.match.params.router;
-      console.log('=== login url ===')
-      console.log(decodeURIComponent(url))
-      return <Redirect push to={decodeURIComponent(url)}/>
+      console.log('=== login url ===');
+      console.log(decodeURIComponent(url));
+      return <Redirect push to={decodeURIComponent(url)}/>;
     }
     return (
       <div className="login">
@@ -78,21 +78,21 @@ class Login extends React.Component {
             </div>
         }
       </div>
-    )
+    );
   }
 }
 
 function mapStateToProps(state) {
   return {
     userinfo: state.userinfo
-  }
+  };
 
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     userinfoActions: bindActionCreators(UserInfoActionsFromOtherFile, dispatch)
-  }
+  };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

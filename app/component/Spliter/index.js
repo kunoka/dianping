@@ -9,6 +9,6 @@ export default class Spliter extends React.Component {
   render() {
     return (
       <div className="spliter"></div>
-    )
+    );
   }
 }

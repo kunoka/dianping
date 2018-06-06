@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       initDone: false
-    }
+    };
   }
 
   // componentWillMount() {
@@ -31,7 +31,7 @@ class App extends React.Component {
     // 从localstorage里面获取城市
     let cityName = localStore.getItem(CITYNAME);
     if (cityName == null) {
-      cityName = '深圳'
+      cityName = '深圳';
     }
     // 将城市信息存储到 Redux 中
     this.props.userinfoActions.update({cityName: cityName})
@@ -40,7 +40,7 @@ class App extends React.Component {
     })
     this.setState({
       initDone: true
-    })
+    });
   }
   render() {
     return(
@@ -48,7 +48,7 @@ class App extends React.Component {
         {this.state.initDone ? this.props.children : <div>加载中...</div>}
       </div>
       // <HomeHeader cityName={this.props.userinfo.cityName}></HomeHeader>
-    )
+    );
   }
 }
 
@@ -56,12 +56,12 @@ function mapStateToProps(state) {
   return {
     userinfo: state.userinfo,
     tmptest: state.tmptest
-  }
+  };
 }
 function mapDispatchToProps(dispatch) {
   return {
     userinfoActions: bindActionCreators(UserInfoActionsFromOtherFile,dispatch)
-  }
+  };
 
 }
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App);
