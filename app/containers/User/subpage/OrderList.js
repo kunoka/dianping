@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.less';
-import {getOrderList} from '../../fetch/orderlist/orderlist';
+import {getOrderList, postComment} from '../../fetch/orderlist/orderlist';
 import OrderListComponent from '@/component/OrderList';
 
 export default class OrderList extends React.Component {
@@ -39,7 +39,15 @@ export default class OrderList extends React.Component {
   }
   // 提交评论
   submitComment(id, value, callback) {
-    callback();
+    const result = postComment(id, value);
+    result.then(res => {
+      return res.json();
+    }).then(json => {
+      if(json.errno === 0) {
+        // 已经评价，修改状态
+        callback();
+      }
+    });
   }
   render() {
     return (

@@ -8,8 +8,9 @@ export default class Item extends React.Component {
       commentState: this.props.data.commentState
     };
     this.showComment = this.showComment.bind(this);
-    this.submitComment = this.submitComment.bind(this);
+    this.submitClickHandle = this.submitClickHandle.bind(this);
     this.hideComment = this.hideComment.bind(this);
+    this.commentOK = this.commentOK.bind(this);
   }
   showComment () {
     this.setState({
@@ -21,7 +22,7 @@ export default class Item extends React.Component {
       commentState: 0
     });
   }
-  submitComment() {
+  submitClickHandle() {
     const submitComment = this.props.submitComment;
     const id = this.props.data.id;
     const commentTextDOM = this.refs.commentText;
@@ -61,8 +62,8 @@ export default class Item extends React.Component {
             <div className="comment-text-container">
               <textarea ref="commentText" name="" id="" cols="30" rows="10" />
               <div>
-                <button onClick={this.submitComment}>提交</button>
-                <button onClick={this.hideComment}>取消</button>
+                <button className="btn" onClick={this.submitClickHandle}>提交</button>
+                <button className="btn btn-selected" onClick={this.hideComment}>取消</button>
               </div>
             </div> : ''
         }
