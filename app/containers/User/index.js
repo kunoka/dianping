@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '@/component/Header';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
+import UserInfo from '@/component/UserInfo';
+import './style.less';
 class User extends React.Component {
   constructor(props){
     super(props);
@@ -24,9 +26,11 @@ class User extends React.Component {
       let url = '/login/' + encodeURIComponent('/user');
       return <Redirect push to={url} />;
     }
+    const userinfo = this.props.userinfo;
     return(
-      <div>
+      <div className="user">
         <Header title="用户中心" backRouter="/"/>
+        <UserInfo username={userinfo.username} city={userinfo.cityName}></UserInfo>
       </div>
     );
   }

@@ -23,9 +23,9 @@ class Home extends React.Component {
       cityName = '北京';
     }
     // 将城市信息存储到 Redux 中
-    // this.props.userinfoActions.change({
-    //   cityName: cityName
-    // });
+    this.props.userinfoActions.change({
+      cityName: cityName
+    });
   }
   render() {
     return (
