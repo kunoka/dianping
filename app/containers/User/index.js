@@ -19,7 +19,7 @@ class User extends React.Component {
     const username = userinfo.username;
     if(!username) {
       this.setState({
-        redirect: false
+        redirect: true
       });
     }
   }

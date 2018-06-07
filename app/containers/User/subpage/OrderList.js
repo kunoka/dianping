@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.less';
 import {getOrderList} from '../../fetch/orderlist/orderlist';
+import OrderListComponent from '@/component/OrderList';
 
 export default class OrderList extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ export default class OrderList extends React.Component {
       <div className="order-list-container">
         <h2>您的订单</h2>
         {
-          this.state.data.length ? <div>{this.state.data.length}</div> : ''
+          this.state.data.length ? <OrderListComponent data={this.state.data} /> : ''
         }
       </div>
     );
