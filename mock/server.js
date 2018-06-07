@@ -24,20 +24,15 @@ router.get('/api/2', async (ctx, next) => {
   };
 });
 // 首页 -- 广告(超值特惠)
-var homeAdData  =require('./home/ad');
+var homeAdData = require('./home/ad');
 router.get('/api/homead', async (ctx, next) => {
   ctx.response.body = homeAdData;
 });
 // 首页 --推荐列表（猜你喜欢）
 var homeListData = require('./home/list');
-router.get('/api/homelist/:city/:page', async(ctx, next) => {
+router.get('/api/homelist/:city/:page', async (ctx, next) => {
   // 参数
-  console.log('---------------')
-  console.log(ctx.req);
-  console.log(ctx.response);
   const params = ctx.params;
-  console.log('==============');
-  console.log(params)
   const paramsCity = params.city;
   const paramsPage = params.page;
   console.log('当前城市: ' + paramsCity);
@@ -49,16 +44,20 @@ router.get('/api/post', async (ctx, next) => {
 });
 // 商户详情
 var shopDetailData = require('./detail/info');
-router.get('/api/detail/info/:id', async(ctx, next) => {
+router.get('/api/detail/info/:id', async (ctx, next) => {
   ctx.response.body = shopDetailData;
 });
 // 用户点评
 var commentData = require('./detail/comment');
-router.get('/api/detail/comment/:id/:page', async(ctx, next) => {
+router.get('/api/detail/comment/:id/:page', async (ctx, next) => {
   ctx.response.body = commentData;
-  console.log(commentData)
-
+  // console.log(commentData);
 });
+// 订单列表
+var orderList = require('./orderlist/orderList');
+router.get('/api/orderlist/:username', async(ctx, next) => {
+  ctx.response.body = orderList;
+})
 app.use(router.routes());
 // 在端口3000监听:
 app.listen(3003);

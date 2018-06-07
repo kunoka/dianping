@@ -3,7 +3,9 @@ import Header from '@/component/Header';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import UserInfo from '@/component/UserInfo';
-import './style.less';
+import Spliter from '@/component/Spliter';
+import OrderList from './subpage/OrderList';
+
 class User extends React.Component {
   constructor(props){
     super(props);
@@ -17,7 +19,7 @@ class User extends React.Component {
     const username = userinfo.username;
     if(!username) {
       this.setState({
-        redirect: true
+        redirect: false
       });
     }
   }
@@ -31,6 +33,8 @@ class User extends React.Component {
       <div className="user">
         <Header title="用户中心" backRouter="/"/>
         <UserInfo username={userinfo.username} city={userinfo.cityName}></UserInfo>
+        <Spliter />
+        <OrderList username={userinfo.username}/>
       </div>
     );
   }
