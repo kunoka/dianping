@@ -57,7 +57,15 @@ router.get('/api/detail/comment/:id/:page', async (ctx, next) => {
 var orderList = require('./orderlist/orderList');
 router.get('/api/orderlist/:username', async(ctx, next) => {
   ctx.response.body = orderList;
-})
+});
+// 提交评论
+router.post('/api/submitComment', async(ctx, next) => {
+  console.log('提交评论');
+  ctx.response.body =  {
+    errno: 0,
+    msg: 'ok'
+  };
+});
 app.use(router.routes());
 // 在端口3000监听:
 app.listen(3003);

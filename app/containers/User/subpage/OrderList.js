@@ -9,6 +9,7 @@ export default class OrderList extends React.Component {
     this.state = {
       data: []
     };
+    this.submitComment = this.submitComment.bind(this);
   }
 
   componentDidMount() {
@@ -18,6 +19,7 @@ export default class OrderList extends React.Component {
       this.loadOrderList(username);
     }
   }
+  // 获取列表数据
   loadOrderList(username) {
     const result = getOrderList(username);
     result.then(res => {
@@ -27,14 +29,24 @@ export default class OrderList extends React.Component {
       this.setState({
         data: json
       });
+    }).catch(ex => {
+      // 开发环境下提示error
+      /*global __DEV__*/
+      if(__DEV__) {
+        console.error('用户主页"订单列表"获取数据报错,', ex.meassage);
+      }
     });
+  }
+  // 提交评论
+  submitComment(id, value, callback) {
+    callback();
   }
   render() {
     return (
       <div className="order-list-container">
         <h2>您的订单</h2>
         {
-          this.state.data.length ? <OrderListComponent data={this.state.data} /> : ''
+          this.state.data.length ? <OrderListComponent data={this.state.data} submitComment={this.submitComment} /> : ''
         }
       </div>
     );

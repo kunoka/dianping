@@ -22,7 +22,20 @@ export default class Item extends React.Component {
     });
   }
   submitComment() {
-
+    const submitComment = this.props.submitComment;
+    const id = this.props.data.id;
+    const commentTextDOM = this.refs.commentText;
+    const value = commentTextDOM.value.trim();
+    if(!value) {
+      return;
+    }
+    submitComment(id, value, this.commentOK);
+  }
+  commentOK() {
+    // 已经评价 修改状态
+    this.setState({
+      commentState: 2
+    });
   }
   render() {
     const data = this.props.data;
@@ -46,7 +59,7 @@ export default class Item extends React.Component {
         {
           this.state.commentState === 1 ?
             <div className="comment-text-container">
-              <textarea name="" id="" cols="30" rows="10" />
+              <textarea ref="commentText" name="" id="" cols="30" rows="10" />
               <div>
                 <button onClick={this.submitComment}>提交</button>
                 <button onClick={this.hideComment}>取消</button>
